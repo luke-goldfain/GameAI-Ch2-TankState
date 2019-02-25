@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23212883187211292}
   - component: {fileID: 65606470599401762}
   - component: {fileID: 54866264605115738}
-  - component: {fileID: 114890208304991688}
+  - component: {fileID: 114934170988423386}
   m_Layer: 0
   m_Name: AdvancedFSMTank 1
   m_TagString: Untagged
@@ -97,7 +97,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1313267842819370}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -467, y: 10, z: -696}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4651331836107576}
@@ -197,12 +197,12 @@ Rigidbody:
   m_GameObject: {fileID: 1313267842819370}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 1
   m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!65 &65606470599401762
 BoxCollider:
@@ -214,9 +214,9 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 32.39441, y: 29.05, z: 43.5339}
-  m_Center: {x: -0.350885, y: 15, z: -0.016762737}
---- !u!114 &114890208304991688
+  m_Size: {x: 32.39441, y: 39, z: 43.5339}
+  m_Center: {x: 0, y: 20, z: 0}
+--- !u!114 &114934170988423386
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -224,6 +224,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1313267842819370}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd3c39793d19b2d48a1e21bc677b149a, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ea1c269785a46246add5afa8c3cbf3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curState: 0
+  Bullet: {fileID: 100000, guid: 9b9d4461862db974fb79e91eb8effac8, type: 2}
+  angryMat: {fileID: 2100000, guid: 05f2f39485a9ce34ca53aca319ec3ba2, type: 2}
+  defaultMat: {fileID: 2100000, guid: e0cecc25436cc434e97d2a5fc6acbc4c, type: 2}

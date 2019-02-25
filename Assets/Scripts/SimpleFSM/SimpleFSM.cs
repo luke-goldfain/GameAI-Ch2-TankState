@@ -15,6 +15,9 @@ public class SimpleFSM : FSM
         Dodge
     }
 
+    // Minimum and maximum values for random wandering
+    private float minX, maxX, minZ, maxZ;
+
     //Current state that the NPC is reaching
     public FSMState curState;
 
@@ -40,15 +43,27 @@ public class SimpleFSM : FSM
     // The position of the nearest bullet
     private Transform nearestBullet;
 
+    // A reference to the tank's material
+    Material tankMat;
+
+    // Angry color material we will switch to on chase, and default material
+    public Material angryMat;
+    public Material defaultMat;
+
     // Whether the tank has dodged yet, and dodge timer vars
     private bool hasDodged;
     private float dodgeTimer = 1f;
     private float dodgeTime;
 
+    // chase timer vars (necessary for chasing when out of range)
+    private float chaseTimer = 5f;
+    private float chaseTime;
+
 
     // Initialize the Finite state machine for the NPC tank
     protected override void Initialize () 
     {
+        FindNextPoint();
         curState = FSMState.Patrol;
         curSpeed = 150.0f;
         curRotSpeed = 2.0f;
@@ -58,12 +73,17 @@ public class SimpleFSM : FSM
         health = 100;
         hasDodged = false;
         dodgeTime = 0.0f;
+        chaseTime = 0.0f;
+        minX = -900f;
+        minZ = -900f;
+        maxX = 900f;
+        maxZ = 900f;
 
         // Get the list of points
-        pointList = GameObject.FindGameObjectsWithTag("WandarPoint");
+        //pointList = GameObject.FindGameObjectsWithTag("WandarPoint");
 
         // Set Random destination point first
-        FindNextPoint();
+        //FindNextPoint();
 
         // Get the target enemy(Player)
         GameObject objPlayer = GameObject.FindGameObjectWithTag("Player");
@@ -79,6 +99,7 @@ public class SimpleFSM : FSM
             print("Player doesn't exist.. Please add one with Tag named 'Player'");
 
         // Get the turret of the tank
+        tankMat = GetComponent<Renderer>().material;
         turret = gameObject.transform.GetChild(0).transform;
         bulletSpawnPoint = turret.GetChild(0).transform;
 	}
@@ -146,7 +167,14 @@ public class SimpleFSM : FSM
         {
             dodgeTime = 0;
             hasDodged = false;
-            curState = FSMState.Patrol;
+
+            int rndDodgeChange = UnityEngine.Random.Range(1, 5);
+
+            // 40% chance to return to patrol, 60% chance to chase and attack
+            if (rndDodgeChange < 3)
+                curState = FSMState.Patrol;
+            else
+                curState = FSMState.Chase;
         }
     }
 
@@ -190,21 +218,37 @@ public class SimpleFSM : FSM
         // Set the target position as the player position
         destPos = playerTransform.position;
 
+        chaseTime += Time.deltaTime;
+
+        GetComponent<Renderer>().material = angryMat;
+
         // Check the distance with player tank
         // When the distance is near, transition to attack state
         float dist = Vector3.Distance(transform.position, playerTransform.position);
         if (dist <= 200.0f)
         {
+            GetComponent<Renderer>().material = defaultMat;
+
+            chaseTimer = 0.0f;
+
             curState = FSMState.Attack;
         }
         //Go back to patrol is it become too far
-        else if (dist >= 300.0f)
+        else if (dist >= 300.0f && chaseTime >= chaseTimer)
         {
+            GetComponent<Renderer>().material = defaultMat;
+
+            chaseTimer = 0.0f;
+
             curState = FSMState.Patrol;
         }
 
         // Go Forward
         transform.Translate(Vector3.forward * Time.deltaTime * curSpeed);
+
+        // Turn towards the player
+        Quaternion targetRotation = Quaternion.LookRotation(playerTransform.position - transform.position);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * curRotSpeed);
     }
 
     /// <summary>
@@ -283,23 +327,22 @@ public class SimpleFSM : FSM
     }   
 
     /// <summary>
-    /// Find the next semi-random patrol point
+    /// Find the next random patrol point
     /// </summary>
     protected void FindNextPoint()
     {
         print("Finding next point");
-        int rndIndex = UnityEngine.Random.Range(0, pointList.Length);
-        float rndRadius = 10.0f;
+        float rndPtX = UnityEngine.Random.Range(minX, maxX);
+        float rndPtZ = UnityEngine.Random.Range(minZ, maxZ);
         
         Vector3 rndPosition = Vector3.zero;
-        destPos = pointList[rndIndex].transform.position + rndPosition;
+        destPos = new Vector3(rndPtX, this.transform.position.y, rndPtZ);
 
         // Check Range
         // Prevent to decide the random point as the same as before
         if (IsInCurrentRange(destPos))
         {
-            rndPosition = new Vector3(UnityEngine.Random.Range(-rndRadius, rndRadius), 0.0f, UnityEngine.Random.Range(-rndRadius, rndRadius));
-            destPos = pointList[rndIndex].transform.position + rndPosition;
+            destPos = new Vector3(rndPtX, this.transform.position.y, rndPtZ);
         }
     }
 

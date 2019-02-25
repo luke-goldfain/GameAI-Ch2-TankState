@@ -173,7 +173,7 @@ GameObject:
   m_Layer: 0
   m_Name: WanderPoint (1)
   m_TagString: WandarPoint
-  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -237,24 +237,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1949026463446928, guid: 1ae11e12b4123d6449de94743bba98eb,
     type: 2}
   m_PrefabInternal: {fileID: 49894718}
---- !u!1 &330823272 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1313267842819370, guid: fbcf88df59df43f45af99b133e4d4dca,
-    type: 2}
-  m_PrefabInternal: {fileID: 815083497}
---- !u!114 &330823273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 330823272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ea1c269785a46246add5afa8c3cbf3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  curState: 0
-  Bullet: {fileID: 100000, guid: 9b9d4461862db974fb79e91eb8effac8, type: 2}
 --- !u!1001 &815083497
 Prefab:
   m_ObjectHideFlags: 0
@@ -298,43 +280,7 @@ Prefab:
       propertyPath: m_Name
       value: EnemyTank (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 54866264605115738, guid: fbcf88df59df43f45af99b133e4d4dca,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 65606470599401762, guid: fbcf88df59df43f45af99b133e4d4dca,
-        type: 2}
-      propertyPath: m_Center.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 65606470599401762, guid: fbcf88df59df43f45af99b133e4d4dca,
-        type: 2}
-      propertyPath: m_Center.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 65606470599401762, guid: fbcf88df59df43f45af99b133e4d4dca,
-        type: 2}
-      propertyPath: m_Center.y
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 65606470599401762, guid: fbcf88df59df43f45af99b133e4d4dca,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 39
-      objectReference: {fileID: 0}
-    - target: {fileID: 54866264605115738, guid: fbcf88df59df43f45af99b133e4d4dca,
-        type: 2}
-      propertyPath: m_Drag
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 54866264605115738, guid: fbcf88df59df43f45af99b133e4d4dca,
-        type: 2}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114890208304991688, guid: fbcf88df59df43f45af99b133e4d4dca, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fbcf88df59df43f45af99b133e4d4dca, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &891613578
@@ -380,43 +326,7 @@ Prefab:
       propertyPath: m_Name
       value: EnemyTank (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 54866264605115738, guid: fbcf88df59df43f45af99b133e4d4dca,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 65606470599401762, guid: fbcf88df59df43f45af99b133e4d4dca,
-        type: 2}
-      propertyPath: m_Center.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 65606470599401762, guid: fbcf88df59df43f45af99b133e4d4dca,
-        type: 2}
-      propertyPath: m_Center.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 65606470599401762, guid: fbcf88df59df43f45af99b133e4d4dca,
-        type: 2}
-      propertyPath: m_Center.y
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 65606470599401762, guid: fbcf88df59df43f45af99b133e4d4dca,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 39
-      objectReference: {fileID: 0}
-    - target: {fileID: 54866264605115738, guid: fbcf88df59df43f45af99b133e4d4dca,
-        type: 2}
-      propertyPath: m_Drag
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 54866264605115738, guid: fbcf88df59df43f45af99b133e4d4dca,
-        type: 2}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114890208304991688, guid: fbcf88df59df43f45af99b133e4d4dca, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fbcf88df59df43f45af99b133e4d4dca, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1010597926
@@ -451,24 +361,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1090084586 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1313267842819370, guid: fbcf88df59df43f45af99b133e4d4dca,
-    type: 2}
-  m_PrefabInternal: {fileID: 1742809735}
---- !u!114 &1090084587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1090084586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ea1c269785a46246add5afa8c3cbf3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  curState: 0
-  Bullet: {fileID: 100000, guid: 9b9d4461862db974fb79e91eb8effac8, type: 2}
 --- !u!1 &1167921768
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,24 +455,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player: {fileID: 228391436}
---- !u!1 &1245074260 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1313267842819370, guid: fbcf88df59df43f45af99b133e4d4dca,
-    type: 2}
-  m_PrefabInternal: {fileID: 891613578}
---- !u!114 &1245074261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1245074260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ea1c269785a46246add5afa8c3cbf3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  curState: 0
-  Bullet: {fileID: 100000, guid: 9b9d4461862db974fb79e91eb8effac8, type: 2}
 --- !u!1 &1394226378
 GameObject:
   m_ObjectHideFlags: 0
@@ -659,7 +533,7 @@ GameObject:
   m_Layer: 0
   m_Name: WanderPoint
   m_TagString: WandarPoint
-  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -731,7 +605,7 @@ GameObject:
   m_Layer: 0
   m_Name: WanderPoint (2)
   m_TagString: WandarPoint
-  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -803,7 +677,7 @@ GameObject:
   m_Layer: 0
   m_Name: WanderPoint (3)
   m_TagString: WandarPoint
-  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -905,43 +779,7 @@ Prefab:
       propertyPath: m_Name
       value: EnemyTank
       objectReference: {fileID: 0}
-    - target: {fileID: 54866264605115738, guid: fbcf88df59df43f45af99b133e4d4dca,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 65606470599401762, guid: fbcf88df59df43f45af99b133e4d4dca,
-        type: 2}
-      propertyPath: m_Center.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 65606470599401762, guid: fbcf88df59df43f45af99b133e4d4dca,
-        type: 2}
-      propertyPath: m_Center.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 65606470599401762, guid: fbcf88df59df43f45af99b133e4d4dca,
-        type: 2}
-      propertyPath: m_Center.y
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 65606470599401762, guid: fbcf88df59df43f45af99b133e4d4dca,
-        type: 2}
-      propertyPath: m_Size.y
-      value: 39
-      objectReference: {fileID: 0}
-    - target: {fileID: 54866264605115738, guid: fbcf88df59df43f45af99b133e4d4dca,
-        type: 2}
-      propertyPath: m_Drag
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 54866264605115738, guid: fbcf88df59df43f45af99b133e4d4dca,
-        type: 2}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114890208304991688, guid: fbcf88df59df43f45af99b133e4d4dca, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fbcf88df59df43f45af99b133e4d4dca, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1776188994
